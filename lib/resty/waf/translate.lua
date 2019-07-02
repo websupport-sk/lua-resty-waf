@@ -492,7 +492,10 @@ function _M.parse_vars(raw_vars)
 
 			local prev_parsed_var = table.remove(parsed_vars)
 
-			if not prev_parsed_var then error("no prev var") end
+			if not prev_parsed_var then
+				prev_parsed_var = {}
+				prev_parsed_var.variable = var
+			end
 
 			if prev_parsed_var.variable ~= var then
 				error("seen var " .. var .. " doesnt match previous var " ..
