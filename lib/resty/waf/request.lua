@@ -156,8 +156,8 @@ function _M.parse_request_body(waf, request_headers, collections)
 			return nil
 		else
 			--_LOG_tostring(content_type_header) .. " not a valid content type!"
-			error(tostring(content_type_header) .. " not a valid content type!")
-			if _waf.mode == "ACTIVE" then
+			logger.warn(waf, tostring(content_type_header) .. " not a valid content type!")
+			if waf._mode == "ACTIVE" then
 				ngx.exit(ngx.HTTP_FORBIDDEN)
 			end
 		end
