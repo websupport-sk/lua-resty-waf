@@ -149,6 +149,7 @@ local valid_transforms = {
 	trimright          = 'trim_right',
 	urldecode          = 'uri_decode',
 	urldecodeuni       = 'uri_decode',
+	utf8tounicode      = 'uri_decode',
 };
 
 local action_lookup = {
