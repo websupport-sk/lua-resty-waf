@@ -504,7 +504,11 @@ function _M.parse_vars(raw_vars)
 			end
 
 			if not prev_parsed_var.ignore then prev_parsed_var.ignore = {} end
-			table.insert(prev_parsed_var.ignore, specific)
+			if var == "REQUEST_HEADERS" or var == "RESPONSE_HEADERS" then
+				table.insert(prev_parsed_var.ignore, string.lower(specific))
+			else
+				table.insert(prev_parsed_var.ignore, specific)
+			end
 
 			parsed = prev_parsed_var
 			parsed.modifier = '!'
