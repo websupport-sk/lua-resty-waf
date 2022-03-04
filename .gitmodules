@@ -6,4 +6,4 @@
 	url = https://github.com/p0pr0ck5/lua-aho-corasick
 [submodule "lua-resty-htmlentities"]
 	path = lua-resty-htmlentities
-	url = git@github.com:thesource93/lua-resty-htmlentities.git
+	url = https://github.com/thesource93/lua-resty-htmlentities.git
